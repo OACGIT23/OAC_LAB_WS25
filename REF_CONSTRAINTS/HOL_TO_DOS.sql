@@ -1,8 +1,0 @@
---------------------------------------------------------
---  Ref Constraints for Table HOL_TO_DOS
---------------------------------------------------------
-
-  ALTER TABLE "WKSP_OACLABWS"."HOL_TO_DOS" ADD CONSTRAINT "HOL_TO_DOS_TASK_ID_FK" FOREIGN KEY ("TASK_ID")
-	  REFERENCES "WKSP_OACLABWS"."HOL_TASKS" ("ID") ENABLE;
-  ALTER TABLE "WKSP_OACLABWS"."HOL_TO_DOS" ADD CONSTRAINT "HOL_TO_DOS_ASSINGEE_FK" FOREIGN KEY ("ASSINGEE")
-	  REFERENCES "WKSP_OACLABWS"."HOL_TEAM_MEMBERS" ("ID") ENABLE;
