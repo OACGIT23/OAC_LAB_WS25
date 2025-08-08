@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<databaseChangeLog 
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  <include file="table/wf_approval_levels_table.xml"/> 
+  <include file="table/wf_dept_table.xml"/> 
+  <include file="table/wf_employee_det_table.xml"/> 
+  <include file="view/wf_emp_dept_v_view.xml"/> 
+  <include file="ref_constraint/emp_dept_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/emp_mgr_fk_ref_constraint.xml"/> 
+  <include file="package_spec/wf_custom_login_package_spec.xml"/> 
+  <include file="index/eba_project_tsk_todo_tk_idx_index.xml"/> 
+  <include file="index/wf_emp_deptno_index.xml"/> 
+  <include file="index/wf_emp_mgr_index.xml"/> 
+  <include file="package_body/wf_custom_login_package_body.xml"/> 
+</databaseChangeLog> 

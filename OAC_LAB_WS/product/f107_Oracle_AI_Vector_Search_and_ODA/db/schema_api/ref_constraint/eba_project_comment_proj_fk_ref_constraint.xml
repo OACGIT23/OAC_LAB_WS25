@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+ xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+ <changeSet id="57d52fd0d4e8cde07137d55671a0a0ba7f771ee3" author="(WKSP_OACLABWS)-Generated" failOnError="true"    runOnChange="false"  runAlways="false"  runInTransaction="false"  >
+  <n0:createOracleRefConstraint objectName="EBA_PROJECT_COMMENT_PROJ_FK" objectType="REF_CONSTRAINT" ownerName="WKSP_OACLABWS"  replaceIfExists="false" >
+    <n0:source><![CDATA[ALTER TABLE "%USER_NAME%"."EBA_PROJECT_COMMENTS" ADD CONSTRAINT "EBA_PROJECT_COMMENT_PROJ_FK" FOREIGN KEY ("PROJECT_ID")
+	  REFERENCES "%USER_NAME%"."EBA_PROJECTS" ("ID") ON DELETE CASCADE ENABLE;]]></n0:source>
+      </n0:createOracleRefConstraint>
+ </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+-->
+<databaseChangeLog 
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+        xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+  
+  <include file="table/dm$p5doc_model_table.xml"/> 
+  <include file="table/dm$p8doc_model_table.xml"/> 
+  <include file="table/dm$p9doc_model_table.xml"/> 
+  <include file="table/dm$padoc_model_table.xml"/> 
+  <include file="table/eba_countries_table.xml"/> 
+  <include file="table/eba_country_intermediates_table.xml"/> 
+  <include file="table/eba_country_organizations_table.xml"/> 
+  <include file="table/eba_country_regions_table.xml"/> 
+  <include file="table/eba_country_sub_regions_table.xml"/> 
+  <include file="table/eba_projects_table.xml"/> 
+  <include file="table/eba_project_comments_table.xml"/> 
+  <include file="table/eba_project_milestones_table.xml"/> 
+  <include file="table/eba_project_status_table.xml"/> 
+  <include file="table/eba_project_tasks_table.xml"/> 
+  <include file="table/eba_project_task_links_table.xml"/> 
+  <include file="table/eba_project_task_todos_table.xml"/> 
+  <include file="view/dm$vjdoc_model_view.xml"/> 
+  <include file="view/dm$vmdoc_model_view.xml"/> 
+  <include file="view/dm$vpdoc_model_view.xml"/> 
+  <include file="view/eba_countries_v_view.xml"/> 
+  <include file="view/eba_projects_completed_v_view.xml"/> 
+  <include file="view/eba_projects_v_view.xml"/> 
+  <include file="ref_constraint/eba_country_intermediates_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_country_organizations_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_country_regions_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_country_sub_regions_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_comment_proj_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_mstone_proj_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_status_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_task_mstone_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_task_proj_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_tsk_link_prj_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_tsk_link_tsk_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_project_tsk_todo_tsk_fk_ref_constraint.xml"/> 
+  <include file="ref_constraint/eba_proj_task_todo_proj_fk_ref_constraint.xml"/> 
+  <include file="index/eba_countries_i1_index.xml"/> 
+  <include file="index/eba_countries_i2_index.xml"/> 
+  <include file="index/eba_countries_i3_index.xml"/> 
+  <include file="index/eba_countries_i4_index.xml"/> 
+  <include file="index/eba_projects_status_idx_index.xml"/> 
+  <include file="index/eba_projects_uk_index.xml"/> 
+  <include file="index/eba_project_comment_prj_idx_index.xml"/> 
+  <include file="index/eba_project_mstone_proj_idx_index.xml"/> 
+  <include file="index/eba_project_status_uk_index.xml"/> 
+  <include file="index/eba_project_tasks_uk_index.xml"/> 
+  <include file="index/eba_project_task_mstone_idx_index.xml"/> 
+  <include file="index/eba_project_task_proj_idx_index.xml"/> 
+  <include file="index/eba_project_tsk_link_pr_idx_index.xml"/> 
+  <include file="index/eba_project_tsk_link_tk_idx_index.xml"/> 
+  <include file="index/eba_project_tsk_todo_pr_idx_index.xml"/> 
+  <include file="index/eba_project_tsk_todo_tk_idx_index.xml"/> 
+  <include file="trigger/eba_projects_biu_trigger.xml"/> 
+  <include file="trigger/eba_project_comments_biu_trigger.xml"/> 
+  <include file="trigger/eba_project_milestones_biu_trigger.xml"/> 
+  <include file="trigger/eba_project_status_biu_trigger.xml"/> 
+  <include file="trigger/eba_project_tasks_biu_trigger.xml"/> 
+  <include file="trigger/eba_project_task_links_biu_trigger.xml"/> 
+  <include file="trigger/eba_project_task_todos_biu_trigger.xml"/> 
+  <include file="job/onnx_obj_store_cred_job.xml"/> 
+  <include file="comment/eba_countries_comment.xml"/> 
+  <include file="comment/eba_country_intermediates_comment.xml"/>
+  <include file="comment/eba_country_organizations_comment.xml"/> 
+  <include file="comment/eba_country_regions_comment.xml"/> 
+  <include file="comment/eba_country_sub_regions_comment.xml"/> 
+</databaseChangeLog> 

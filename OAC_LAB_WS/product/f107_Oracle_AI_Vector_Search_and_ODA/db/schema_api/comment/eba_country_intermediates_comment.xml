@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+ xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+ <changeSet id="0dc939ab09de9788d015cda0ce6e8892b19d0904" author="(WKSP_OACLABWS)-Generated" failOnError="true"    runOnChange="false"  runAlways="false"  runInTransaction="false"  >
+  <n0:createOracleComment objectName="EBA_COUNTRY_INTERMEDIATES" objectType="COMMENT" ownerName="WKSP_OACLABWS" sourceType="STRING" replaceIfExists="false" >
+    <n0:source><![CDATA[
+   COMMENT ON COLUMN "EBA_COUNTRY_INTERMEDIATES"."ID" IS 'Auto-incrementing primary key';
+   COMMENT ON COLUMN "EBA_COUNTRY_INTERMEDIATES"."NAME" IS 'The region name';
+   COMMENT ON TABLE "EBA_COUNTRY_INTERMEDIATES"  IS 'Intermediate geographical region';]]></n0:source>
+      </n0:createOracleComment>
+ </changeSet>
+</databaseChangeLog>

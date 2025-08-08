@@ -1,0 +1,1 @@
+liquibase update -changelog-file product\f107_Oracle_AI_Vector_Search_and_ODA\f107productController.xml;

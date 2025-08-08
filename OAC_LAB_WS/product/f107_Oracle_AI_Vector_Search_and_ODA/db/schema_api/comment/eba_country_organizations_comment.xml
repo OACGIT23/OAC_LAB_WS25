@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+ xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+ <changeSet id="860a56dd6c75f5c1dad3676302e83b873ee88b95" author="(WKSP_OACLABWS)-Generated" failOnError="true"    runOnChange="false"  runAlways="false"  runInTransaction="false"  >
+  <n0:createOracleComment objectName="EBA_COUNTRY_ORGANIZATIONS" objectType="COMMENT" ownerName="WKSP_OACLABWS" sourceType="STRING" replaceIfExists="false" >
+    <n0:source><![CDATA[
+   COMMENT ON COLUMN "EBA_COUNTRY_ORGANIZATIONS"."ID" IS 'Auto-incrementing primary key';
+   COMMENT ON COLUMN "EBA_COUNTRY_ORGANIZATIONS"."CODE" IS 'The region code';
+   COMMENT ON COLUMN "EBA_COUNTRY_ORGANIZATIONS"."NAME" IS 'The region name';
+   COMMENT ON TABLE "EBA_COUNTRY_ORGANIZATIONS"  IS 'Regions specifically for the orgnaization';]]></n0:source>
+      </n0:createOracleComment>
+ </changeSet>
+</databaseChangeLog>

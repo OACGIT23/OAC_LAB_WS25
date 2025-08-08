@@ -1,0 +1,1 @@
+liquibase update -changelog-file product\f106_Oracle_AI_Services\f106productController.xml;
