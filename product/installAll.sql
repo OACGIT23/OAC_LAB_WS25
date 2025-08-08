@@ -1,0 +1,1 @@
+liquibase update -changelog-file product\projectController.xml

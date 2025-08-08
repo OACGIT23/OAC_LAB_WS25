@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+ xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+ <changeSet id="82742880eac0b14338c5e6a3c72cd7870a786cac" author="(WKSP_OACLABWS)-Generated" failOnError="true"    runOnChange="false"  runAlways="false"  runInTransaction="false"  >
+  <n0:createSxmlObject objectName="DM$VJDOC_MODEL" objectType="VIEW" ownerName="WKSP_OACLABWS"  replaceIfExists="false" >
+    <n0:source><![CDATA[
+  <VIEW xmlns="http://xmlns.oracle.com/ku" version="1.0">
+   <SCHEMA>%USER_NAME%</SCHEMA>
+   <NAME>DM$VJDOC_MODEL</NAME>
+   <NONEDITIONABLE></NONEDITIONABLE>
+   <DEFAULT_COLLATION>USING_NLS_COMP</DEFAULT_COLLATION>
+   <COL_LIST>
+      <COL_LIST_ITEM>
+         <NAME>METADATA</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+   </COL_LIST>
+   <ANNOTATION_LIST></ANNOTATION_LIST>
+   <SUBQUERY>SELECT METADATA FROM "DM$P8DOC_MODEL"/*#*/  WHERE sys_dm_rxform_lab("DOC_MODEL"/*#*/, null, null) is null</SUBQUERY>
+</VIEW>]]></n0:source>
+      </n0:createSxmlObject>
+ </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog 
+ xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+ xmlns:n0="http://www.oracle.com/xml/ns/dbchangelog-ext" 
+ xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog 
+ http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+ <changeSet id="fc703bc70c4249929085632eb66af62d0ccc8242" author="(WKSP_OACLABWS)-Generated" failOnError="true"    runOnChange="false"  runAlways="false"  runInTransaction="false"  >
+  <n0:createSxmlObject objectName="EBA_PROJECTS_COMPLETED_V" objectType="VIEW" ownerName="WKSP_OACLABWS"  replaceIfExists="false" >
+    <n0:source><![CDATA[
+  <VIEW xmlns="http://xmlns.oracle.com/ku" version="1.0">
+   <SCHEMA>%USER_NAME%</SCHEMA>
+   <NAME>EBA_PROJECTS_COMPLETED_V</NAME>
+   <DEFAULT_COLLATION>USING_NLS_COMP</DEFAULT_COLLATION>
+   <COL_LIST>
+      <COL_LIST_ITEM>
+         <NAME>ID</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>NAME</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>PROJECT_LEAD</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>COMPLETED_DATE</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>BUDGET</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>COST</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>TASKS_ON_TIME</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>TASKS_LATE</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>TASKS_INCOMPLETE</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>MILESTONES_ON_TIME</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>MILESTONES_LATE</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+      <COL_LIST_ITEM>
+         <NAME>MILESTONES_INCOMPLETE</NAME>
+         <ANNOTATION_LIST></ANNOTATION_LIST>
+      </COL_LIST_ITEM>
+   </COL_LIST>
+   <ANNOTATION_LIST></ANNOTATION_LIST>
+   <SUBQUERY>select p.id
+,      p.name
+,      p.project_lead
+,      p.completed_date
+,      p.budget
+,      (select sum(t.cost)
+        from eba_project_tasks t
+        where t.project_id = p.id
+       ) cost
+,      (  (select count(*)
+           from eba_project_milestones m
+           ,    eba_project_tasks t
+           where t.project_id = p.id
+           and   t.milestone_id = m.id
+           and   nvl(t.is_complete_yn,'N') = 'Y'
+           and   t.end_date &#60;= m.due_date
+          )
+        + (select count(*)
+           from eba_project_tasks t
+           where t.project_id = p.id
+           and   t.milestone_id is null
+           and   nvl(t.is_complete_yn,'N') = 'Y'
+          )
+       ) tasks_on_time 
+,      (select count(*)
+        from eba_project_milestones m
+        ,    eba_project_tasks t
+        where t.project_id = p.id
+        and   t.milestone_id = m.id
+        and   nvl(t.is_complete_yn,'N') = 'Y'
+        and   t.end_date > m.due_date
+       ) tasks_late
+,      (select count(*)
+        from eba_project_tasks t
+        where t.project_id = p.id
+        and   nvl(t.is_complete_yn,'N') = 'N'
+       ) tasks_incomplete
+,      (select count(*)
+        from eba_project_milestones m
+        where m.project_id = p.id
+        and   not exists (select t.id
+                          from eba_project_tasks t
+                          where t.milestone_id = m.id
+                          and   nvl(t.is_complete_yn,'N') = 'Y'
+                          and   t.end_date > m.due_date
+                         )
+       ) milestones_on_time
+,      (select count(*)
+        from eba_project_milestones m
+        where m.project_id = p.id
+        and   exists (select t.id
+                      from eba_project_tasks t
+                      where t.milestone_id = m.id
+                      and   nvl(t.is_complete_yn,'N') = 'Y'
+                      and   t.end_date > m.due_date
+                     )
+       ) milestones_late
+,      (select count(*)
+        from eba_project_milestones m
+        where m.project_id = p.id
+        and   exists (select t.id
+                      from eba_project_tasks t
+                      where t.milestone_id = m.id
+                      and   nvl(t.is_complete_yn,'N') = 'N'
+                     )
+       ) milestones_incomplete
+from eba_projects p
+where p.status_id = 3</SUBQUERY>
+</VIEW>]]></n0:source>
+      </n0:createSxmlObject>
+ </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.9.xsd">
+
+    <changeSet author="OAC_LAB_WS" id="OracleAIVector" runOnChange="true" runWith="sqlplus">
+      <sqlFile dbms="oracle"
+               path="product\f107_Oracle_AI_Vector_Search_and_ODA\apex\f107.sql"
+               relativeToChangelogFile="true"/>
+    </changeSet>
+</databaseChangeLog>
